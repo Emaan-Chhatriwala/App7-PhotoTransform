@@ -143,6 +143,17 @@
         context.fillText("Original image will go here", 10, 20);
       </script>
 
+     <canvas id="blueCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+     <script>
+        // declares and initializes second bluecanvas and adds base text
+        var blueCanvas = document.getElementById('blueCanvas');
+        var blueContext = blueCanvas.getContext("2d");
+        blueContext.font = '20pt Calibri';
+        blueContext.fillStyle = "blue";
+        blueContext.fillText("Blue-filtered image will go here", 10, 20);
+     </script>
+
+
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
       <p>DIY Diagnostics</p>
