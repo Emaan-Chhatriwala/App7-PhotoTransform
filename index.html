@@ -102,7 +102,21 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
+          // get image data from original input photo
+          let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+          let data = imageData.data;
           
+          // loop through each pixel and reset r and g values to zero
+          for (let i = 0; i < data.length; i += 4) {
+            data[i] = 0;     // red values
+            data[i + 1] = 0; // green values
+            // blue values stays the same (data[i + 2])
+   
+          }
+
+// Put modified image data onto the blueCanvas
+blueContext.putImageData(imageData, 0, 0);
+
           
           
         } // end of img.onload
@@ -146,6 +160,7 @@
      <canvas id="blueCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
      <script>
         // declares and initializes second bluecanvas and adds base text
+        // mimics above code, changes some text and identifying canvas features
         var blueCanvas = document.getElementById('blueCanvas');
         var blueContext = blueCanvas.getContext("2d");
         blueContext.font = '20pt Calibri';
